@@ -1,0 +1,24 @@
+
+<!--
+  <div class="card mt-4">
+  <div class="card-body">
+    <h5 class="card-title">N°: {{order.OrderNumber}}</h5>
+    <p class="card-text">{{order.Observation}}</p>
+    <a [routerLink]="['/orders',order.IdOrder]" class="btn btn-primary mr-1">Editar</a>
+    <a (click)="deleteOrder()" class="btn btn-danger">Eliminar</a>
+  </div>
+</div>
+
+-->
+
+
+
+<tr >
+  <th scope="row">{{order.IdOrder}}</th>
+  <td>{{order.IdUser}}</td>
+  <td>{{order.OrderNumber}}</td>
+  <td>{{order.DateTime}}</td>
+  <td>{{order.ProviderName}}</td>
+  <td>{{order.TotalValue}}</td>
+  <td>{{order.Status}}</td>
+</tr>

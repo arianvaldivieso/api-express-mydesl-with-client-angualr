@@ -1,0 +1,90 @@
+<div id="order-edit">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12">
+
+        <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+
+          <div class="row">
+            <div class="col-6" *ngIf="users">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Usuario</label>
+                <select formControlName="IdUser"  class="form-select" aria-label="Default select example">
+                  <option  disabled>Selecciona un usuario</option>
+                  <option [value]="user.IdUser" *ngFor="let user of users">{{user.Name}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="orderNumber" class="form-label">Número de orden</label>
+                <input formControlName="OrderNumber" type="number" class="form-control" id="orderNumber">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="orderDate" class="form-label">Fecha de la orden</label>
+                <input formControlName="DateTime" type="date" class="form-control" id="orderDate">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="providerName" class="form-label">Proveedor</label>
+                <input formControlName="ProviderName" type="text" class="form-control" id="providerName">
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="observation" class="form-label">Observaciones</label>
+                <textarea formControlName="Observation" class="form-control w-100" id="observation" name="" id=""></textarea>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="status" class="form-label">Estado</label>
+                <input formControlName="Status" type="text" class="form-control" id="status">
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="total" class="form-label">Total</label>
+                <input formControlName="TotalValue" type="text" class="form-control" id="total">
+              </div>
+            </div>
+
+
+            <div class="col-6">
+              <div class="mb-3">
+                <button type="submit" [disabled]="orderForm.invalid" [ngClass]="{
+                  'btn-primary':!orderForm.invalid,
+                  'btn-danger':orderForm.invalid
+                }" class="btn  w-100">
+                  <span *ngIf="orderForm.touched && orderForm.invalid">Complete el formulario</span>
+                  <span *ngIf="!orderForm.touched || !orderForm.invalid">Actualizar</span>
+                </button>
+              </div>
+            </div>
+
+
+            <div class="col-6" *ngIf="order">
+              <div class="mb-3">
+                <a [routerLink]="['/products']" [queryParams]="{orderId: order.IdOrder}" class="btn btn-info w-100">Ver productos</a>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <hr>
+    </div>
+  </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,58 @@
+<div id="products">
+  <div class="container">
+
+    <div class="row justify-content-end">
+      <div class="col-auto">
+        <a [routerLink]="['/products/create']" [queryParams]="{orderId: idOrder}" class="btn btn-primary">Crear un producto</a>
+      </div>
+    </div>
+    <div class="row">
+
+
+      <div class="col-12">
+        <table class="table mt-4">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Orden</th>
+              <th scope="col">Marca</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Cantidad por caja</th>
+              <th scope="col">Sku</th>
+              <th scope="col">Estado</th>
+              <th>Unidad</th>
+              <th>Valor de unidad</th>
+              <th>Volumen</th>
+              <th>Peso</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor="let product of products">
+              <td>{{product.IdOrdersProducts}}</td>
+              <td>{{product.IdOrder}}</td>
+              <td>{{product.Mark}}</td>
+              <td>{{product.Quantity}}</td>
+              <td>{{product.QtyBox}}</td>
+              <td>{{product.SKU}}</td>
+              <td>
+                <div class="btn btn-success" *ngIf="product.Status">Activo</div>
+                <div class="btn btn-danger" *ngIf="!product.Status">Inactivo</div>
+              </td>
+              <td>{{product.Unit}}</td>
+              <td>{{product.ValueUnit}}</td>
+              <td>{{product.Volumen}}</td>
+              <td>{{product.Weight}}</td>
+              <td><a [routerLink]="['/products',product.IdOrdersProducts]" class="btn btn-primary">Editar</a></td>
+              <td><a (click)="deleteProduct(product.IdOrdersProducts)" class="btn btn-danger">Eliminar</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

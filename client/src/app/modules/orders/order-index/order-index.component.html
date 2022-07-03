@@ -1,0 +1,47 @@
+<div id="orders">
+  <div class="container">
+
+    <div class="row justify-content-end">
+      <div class="col-auto">
+        <a [routerLink]="['/orders/create']" class="btn btn-primary">Crear una orden</a>
+      </div>
+    </div>
+    <div class="row">
+
+
+      <div class="col-12">
+        <table class="table mt-4">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Numero de orden</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Proveedor</th>
+              <th scope="col">Total</th>
+              <th scope="col">Estado</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor="let order of orders">
+              <th scope="row">{{order.IdOrder}}</th>
+              <td>{{order.user}}</td>
+              <td>{{order.OrderNumber}}</td>
+              <td>{{order.DateTime}}</td>
+              <td>{{order.ProviderName}}</td>
+              <td>{{order.TotalValue}}</td>
+              <td>{{order.Status}}</td>
+              <td><a [routerLink]="['/orders',order.IdOrder]" class="btn btn-primary">Editar</a></td>
+              <td><a (click)="deleteOrder(order.IdOrder)" class="btn btn-danger">Eliminar</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

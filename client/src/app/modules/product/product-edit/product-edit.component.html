@@ -1,0 +1,112 @@
+<div id="order-edit">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-8 col-md-8 col-sm-8 col-12">
+
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+
+
+          <div class="row">
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="IdOrder" class="form-label">Número de orden</label>
+                <input readonly formControlName="IdOrder" type="number" class="form-control" id="orderNumber">
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="Unit" class="form-label">Unidad</label>
+                <input  formControlName="Unit" type="text" class="form-control" id="orderNumber">
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="ValueUnit" class="form-label">Valor de unidad</label>
+                <input  formControlName="ValueUnit" type="number" class="form-control" id="orderNumber">
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="Description" class="form-label">Descripción</label>
+                <textarea formControlName="Description" id="" cols="30" rows="10"></textarea>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="SKU" class="form-label">SKU</label>
+                <input readonly formControlName="SKU" type="number" class="form-control" id="orderNumber">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="Quantity" class="form-label">Quantity</label>
+                <input  formControlName="Quantity" type="number" class="form-control" id="orderNumber">
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="QtyBox" class="form-label">Cantidad de caja</label>
+                <input  formControlName="QtyBox" type="number" class="form-control" id="orderNumber">
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="Weight" class="form-label">Peso</label>
+                <input  formControlName="Weight" type="number" class="form-control" id="orderNumber">
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="Volumen" class="form-label">Volumen</label>
+                <input  formControlName="Volumen" type="number" class="form-control" id="orderNumber">
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="Mark" class="form-label">Marca</label>
+                <input  formControlName="Mark" type="text" class="form-control" id="orderNumber">
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="Status" class="form-label">Estado</label>
+                <select id="Status" formControlName="Status" class="form-control">
+                  <option value="1">Activo</option>
+                  <option value="0">Inactivo</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="col-12">
+              <div class="mb-3">
+                <button type="submit" [disabled]="productForm.invalid" [ngClass]="{
+                  'btn-primary':!productForm.invalid,
+                  'btn-danger':productForm.invalid
+                }" class="btn  w-100">
+                  <span *ngIf="productForm.touched && productForm.invalid">Complete el formulario</span>
+                  <span *ngIf="!productForm.touched || !productForm.invalid">Enviar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
