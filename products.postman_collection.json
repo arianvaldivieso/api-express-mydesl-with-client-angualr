@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "149863ca-10b1-4632-a706-5e857403cf6b",
+		"name": "products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2845240"
+	},
+	"item": [
+		{
+			"name": "get products - index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/api/v1/products",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "store products",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "idOrder",
+							"value": "42",
+							"type": "text"
+						},
+						{
+							"key": "ValueUnit",
+							"value": " 20",
+							"type": "text"
+						},
+						{
+							"key": "Unit",
+							"value": "KG",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "hola",
+							"type": "text"
+						},
+						{
+							"key": "SKU",
+							"value": "1236612",
+							"type": "text"
+						},
+						{
+							"key": "Quantity",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "QtyBox",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "Weight",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "Volumen",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "Mark",
+							"value": "nike",
+							"type": "text"
+						},
+						{
+							"key": "Status",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/api/v1/products",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update product - Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "idOrder",
+							"value": "42",
+							"type": "text"
+						},
+						{
+							"key": "ValueUnit",
+							"value": " 22",
+							"type": "text"
+						},
+						{
+							"key": "Unit",
+							"value": "KG",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "hola",
+							"type": "text"
+						},
+						{
+							"key": "SKU",
+							"value": "1236612",
+							"type": "text"
+						},
+						{
+							"key": "Quantity",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "QtyBox",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "Weight",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "Volumen",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "Mark",
+							"value": "nike",
+							"type": "text"
+						},
+						{
+							"key": "Status",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/api/v1/orders/1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product - get",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/api/v1/orders/3",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Order - Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/api/v1/products/1",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

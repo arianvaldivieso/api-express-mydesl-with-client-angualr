@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "ec4af7d5-756c-414f-9f13-e0bc13d58783",
+		"name": "orders",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2845240"
+	},
+	"item": [
+		{
+			"name": "get orders - index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/api/v1/orders",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get order - get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/api/v1/orders",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "store Order - Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "IdUser",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "OrderNumber",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "DateTime",
+							"value": "2019-12-10",
+							"type": "text"
+						},
+						{
+							"key": "ProviderName",
+							"value": "Prveedor - 1",
+							"type": "text"
+						},
+						{
+							"key": "DateCreated",
+							"value": "2019-12-11",
+							"type": "text"
+						},
+						{
+							"key": "Observation",
+							"value": "prueba",
+							"type": "text"
+						},
+						{
+							"key": "TotalValue",
+							"value": "5000",
+							"type": "text"
+						},
+						{
+							"key": "Status",
+							"value": "pending",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/api/v1/orders",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Order - Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "IdUser",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "OrderNumber",
+							"value": "25",
+							"type": "text"
+						},
+						{
+							"key": "DateTime",
+							"value": "2019-12-12",
+							"type": "text"
+						},
+						{
+							"key": "ProviderName",
+							"value": "Prveedor - 1",
+							"type": "text"
+						},
+						{
+							"key": "DateCreated",
+							"value": "2019-12-11",
+							"type": "text"
+						},
+						{
+							"key": "Observation",
+							"value": "prueba",
+							"type": "text"
+						},
+						{
+							"key": "TotalValue",
+							"value": "5000",
+							"type": "text"
+						},
+						{
+							"key": "Status",
+							"value": "pending",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{server}}/api/v1/orders/21",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Order - Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}/api/v1/orders/40",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"40"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
