@@ -38,13 +38,13 @@ export class OrderEditComponent implements OnInit {
       DateCreated: ['',[Validators.required]],
       Observation: ['',[Validators.required]],
       TotalValue: ['',[Validators.required]],
-      Status: ['',Validators.required]
+      Status: ['',Validators.required],
+      avergarePrice: ['']
     });
-
   }
 
-  ngOnInit(): void {
 
+  ngOnInit(): void {
     this._route.params
       .subscribe((params:any) => {
         this.orderId = params.orderId;

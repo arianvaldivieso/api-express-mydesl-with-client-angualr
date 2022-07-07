@@ -49,7 +49,7 @@ function update(req,res){
     let payload = req.body;
      
 
-    pool.query(`update OrdersProducts set ValueUnit = ${payload.ValueUnit},Unit = '${payload.Unit}',Description = '${payload.Description}',Quantity = ${payload.Quantity},QtyBox = ${payload.QtyBox},Weight = ${payload.Weight},Volumen = ${payload.Volumen},Mark = '${payload.Mark}',Status = ${payload.Status} where IdOrdersProducts = ${req.params.productId}`, payload, (err, results) =>  {
+    pool.query(`update OrdersProducts set NumberPackage = ${payload.NumberPackage} , ValueUnit = ${payload.ValueUnit},Unit = '${payload.Unit}',Description = '${payload.Description}',Quantity = ${payload.Quantity},QtyBox = ${payload.QtyBox},Weight = ${payload.Weight},Volumen = ${payload.Volumen},Mark = '${payload.Mark}',Status = ${payload.Status} where IdOrdersProducts = ${req.params.productId}`, payload, (err, results) =>  {
         if (err) throw err;
         res.status(200).json({
             status: "success",

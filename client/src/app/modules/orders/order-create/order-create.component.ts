@@ -29,7 +29,7 @@ export class OrderCreateComponent implements OnInit {
   ) {
 
     this.orderForm = this.fb.group({
-      IdUser: ['', [Validators.required]],
+      IdUser: [localStorage.getItem('user-ir-test'), [Validators.required]],
       OrderNumber: ['',[Validators.required]],
       DateTime: ['',[Validators.required]],
       ProviderName: ['',[Validators.required]],

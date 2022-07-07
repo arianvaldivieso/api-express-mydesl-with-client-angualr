@@ -24,6 +24,7 @@
               <th>Valor de unidad</th>
               <th>Volumen</th>
               <th>Peso</th>
+              <th>Número de lote</th>
               <th></th>
               <th></th>
             </tr>
@@ -44,6 +45,7 @@
               <td>{{product.ValueUnit}}</td>
               <td>{{product.Volumen}}</td>
               <td>{{product.Weight}}</td>
+              <td>{{product.NumberPackage}}</td>
               <td><a [routerLink]="['/products',product.IdOrdersProducts]" class="btn btn-primary">Editar</a></td>
               <td><a (click)="deleteProduct(product.IdOrdersProducts)" class="btn btn-danger">Eliminar</a></td>
             </tr>

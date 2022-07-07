@@ -11,4 +11,5 @@ export interface Product {
   Volumen:Number;
   Mark:String;
   Status:Boolean;
+  NumberPackage:String;
 }

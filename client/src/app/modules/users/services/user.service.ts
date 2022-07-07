@@ -10,4 +10,12 @@ export class UserService extends GlobalHttpService{
     return await this._http.get(`${this.apiUrl}/users`).toPromise();
   }
 
+  async login(payload:any):Promise<any>{
+    try {
+      return await this._http.post(`${this.apiUrl}/users/login`,payload).toPromise();
+    } catch (error:any) {
+      return error;
+    }
+  }
+
 }

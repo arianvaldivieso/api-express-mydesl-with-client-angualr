@@ -22,30 +22,46 @@ CREATE TABLE `OrdersProducts` (
   `Mark` varchar(255) NOT NULL,
   `Status` tinyint NOT NULL,
   `IsDelete` tinyint NOT NULL DEFAULT '0',
+  `NumberPackage` varchar(255) NOT NULL,
   PRIMARY KEY (`IdOrdersProducts`),
   KEY `IdOrder` (`IdOrder`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-INSERT INTO `OrdersProducts` (`IdOrdersProducts`, `IdOrder`, `ValueUnit`, `Unit`, `Description`, `SKU`, `Quantity`, `QtyBox`, `Weight`, `Volumen`, `Mark`, `Status`, `IsDelete`) VALUES
-(3,	44,	90,	'KG',	'hola',	'1236612',	10,	5,	20,	30,	'nike',	1,	0),
-(4,	50,	20,	'KG',	'hola mundo',	'1236612',	10,	5,	20,	30,	'nike',	1,	0),
-(5,	41,	20,	'KG',	'hola',	'1236612',	10,	5,	20,	30,	'nike',	1,	0),
-(6,	41,	20,	'KG',	'hola',	'1236612',	10,	5,	20,	30,	'nike',	1,	0),
-(7,	41,	20,	'KG',	'hola',	'1236612',	10,	5,	20,	30,	'nike',	1,	0),
-(8,	41,	20,	'KG',	'hola',	'1236612',	10,	5,	20,	30,	'nike',	1,	0),
-(9,	42,	20,	'KG',	'hola',	'1236612',	10,	5,	20,	30,	'nike',	1,	0),
-(11,	50,	31231,	'1231',	'123123',	'123123',	123,	123,	123123,	123,	'12312',	1,	1),
-(12,	42,	20,	'KG',	'hola',	'1236612',	10,	5,	20,	30,	'nike',	1,	0),
-(13,	42,	20,	'KG',	'hola',	'1236612',	10,	5,	20,	30,	'nike',	1,	0),
-(14,	42,	20,	'KG',	'hola',	'1236612',	10,	5,	20,	30,	'nike',	1,	0),
-(15,	50,	3123,	'1231',	'12313',	'1231',	31231,	312312,	3123120,	123123,	'123',	1,	0),
-(16,	50,	12312,	'123',	'3123123',	'12312',	123123,	1231,	1231,	123123,	'123123',	0,	0),
-(17,	58,	123,	'132',	'123123',	'123123',	123,	123,	123,	123123,	'123123',	1,	1),
-(18,	58,	2312,	'asdasd',	'1231',	'123123',	123123,	123,	123132,	123123,	'123123',	0,	1),
-(19,	58,	123,	'123',	'123',	'123',	123,	123123,	123123,	123123,	'123132',	1,	1),
-(20,	58,	1231,	'132123',	'32',	'123123',	123123,	123123,	123,	123123,	'123123',	1,	1),
-(21,	58,	3123,	'1231',	'1123',	'123123',	123,	123,	123,	123123,	'123123',	1,	1),
-(22,	58,	123,	'1231',	'123',	'123123',	123,	123123,	123123,	123123,	'123123',	1,	1),
-(23,	58,	123123,	'12313',	'123123',	'123123',	123123,	123123,	123123,	123123,	'12312',	1,	0);
+INSERT INTO `OrdersProducts` (`IdOrdersProducts`, `IdOrder`, `ValueUnit`, `Unit`, `Description`, `SKU`, `Quantity`, `QtyBox`, `Weight`, `Volumen`, `Mark`, `Status`, `IsDelete`, `NumberPackage`) VALUES
+(24,	1,	200,	'123456',	'13123',	'12312',	12,	12,	12,	12,	'nike',	1,	0,	'123456789'),
+(25,	1,	500,	'23456',	'lorem',	'12313',	12,	12,	12,	12,	'nike',	1,	0,	'12123'),
+(26,	1,	100,	'123456',	'13123',	'12312',	12,	12,	12,	12,	'nike',	1,	0,	'123456789');
 
--- 2022-07-03 22:48:32
+DROP TABLE IF EXISTS `User`;
+CREATE TABLE `User` (
+  `IdUser` int NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) NOT NULL,
+  `Email` varchar(255) NOT NULL,
+  `Status` tinyint NOT NULL,
+  PRIMARY KEY (`IdUser`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `User` (`IdUser`, `Name`, `Email`, `Status`) VALUES
+(1,	'arian',	'arianvaldivieso@gmail.com',	1);
+
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE `orders` (
+  `IdOrder` int NOT NULL AUTO_INCREMENT,
+  `IdUser` int NOT NULL,
+  `OrderNumber` int NOT NULL,
+  `DateTime` varchar(255) NOT NULL,
+  `ProviderName` varchar(255) NOT NULL,
+  `DateCreated` varchar(255) NOT NULL,
+  `Observation` varchar(222) NOT NULL,
+  `TotalValue` float NOT NULL,
+  `Status` varchar(255) NOT NULL,
+  `IsDeleted` tinyint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`IdOrder`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `orders` (`IdOrder`, `IdUser`, `OrderNumber`, `DateTime`, `ProviderName`, `DateCreated`, `Observation`, `TotalValue`, `Status`, `IsDeleted`) VALUES
+(1,	1,	20,	'2019-12-10 00:00:00.000',	'Prveedor - 1',	'2022-07-07 18:18:35.287',	'prueba',	5000,	'pending',	0),
+(2,	1,	12,	'1994-12-12 00:00:00.000',	'asdas',	'2022-07-07 18:22:50.019',	'asdasd',	123123,	'123123',	0),
+(3,	1,	12,	'1994-12-12 00:00:00.000',	'asasd',	'2022-07-07 19:24:51.749',	'adsasd',	1,	'asd',	0);
+
+-- 2022-07-07 19:31:41

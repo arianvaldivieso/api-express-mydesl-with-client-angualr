@@ -41,6 +41,7 @@ export class ProductCreateComponent implements OnInit {
       Volumen: ['',Validators.required],
       Mark: ['',Validators.required],
       Status: ['',Validators.required],
+      NumberPackage: ['',[Validators.required]]
     });
 
   }

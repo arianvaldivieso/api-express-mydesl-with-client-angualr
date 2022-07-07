@@ -29,7 +29,8 @@
       "@orders/*": ["src/app/modules/orders/*"],
       "@products/*": ["src/app/modules/product/*"],
       "@users/*": ["src/app/modules/users/*"],
-      "@services/*": ["src/app/core/services/*"]
+      "@services/*": ["src/app/core/services/*"],
+      "@guards/*": ["src/app/core/guards/*"]
       //"@services/*": ["src/app/services/*"],
       //"@guards/*": ["src/app/core/guards/*"]
     }

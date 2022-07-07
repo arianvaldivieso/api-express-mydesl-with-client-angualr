@@ -7,17 +7,22 @@ import { environment } from '@env';
 })
 export class GlobalHttpService {
 
+  getHeaders(){
+    return {
+      headers:{
+        'Authorization': `Bearer ${localStorage.getItem('jwt-test')}`
+      }
+    }
+  }
+
+
   apiUrl:string = environment.apiUrl;
 
   constructor(
     public _http: HttpClient
   ) {
-
     console.log(this._http);
-
   }
-
-
 
 
 }

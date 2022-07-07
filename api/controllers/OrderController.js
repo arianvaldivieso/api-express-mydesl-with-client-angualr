@@ -17,7 +17,12 @@ function index(req,res){
 
 function get(req,res){
     
-    pool.query(`select orders.*,User.Name as user from orders inner join User on User.IdUser = orders.IdUser where IdOrder = ${req.params.orderId}`,(err,results) => {
+    const query = `select avg(OrdersProducts.ValueUnit) as avergarePrice,orders.* , User.Name as user
+    from orders 
+    inner join User on User.IdUser = orders.IdUser
+    left join OrdersProducts on orders.IdOrder = OrdersProducts.IdOrder  where orders.IdOrder = ${req.params.orderId}` 
+
+    pool.query(query,(err,results) => {
         if (err) throw err;
         res.status(200).json({
             status: "success",
@@ -44,6 +49,7 @@ function store(req,res){
     let payload = req.body;
     payload.DateTime = new Date(payload.DateTime);
     payload.DateCreated = new Date();
+    payload.IdUser= req.token; 
 
     pool.query(`insert into orders set ?`, payload, (err, results) =>  {
         if (err) throw err;

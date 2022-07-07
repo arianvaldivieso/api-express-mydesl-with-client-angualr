@@ -5,21 +5,8 @@
 
         <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
 
-
-
           <div class="row">
-            <div class="col-6" *ngIf="users">
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Usuario</label>
-                <select formControlName="IdUser"  class="form-select" aria-label="Default select example">
-                  <option  disabled>Selecciona un usuario</option>
-                  <option [value]="user.IdUser" *ngFor="let user of users">{{user.Name}}</option>
-                </select>
 
-
-
-              </div>
-            </div>
             <div class="col-6">
               <div class="mb-3">
                 <label for="orderNumber" class="form-label">Número de orden</label>

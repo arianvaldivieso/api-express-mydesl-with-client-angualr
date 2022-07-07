@@ -44,6 +44,7 @@ export class ProductEditComponent implements OnInit {
       Volumen: ['',Validators.required],
       Mark: ['',Validators.required],
       Status: ['',Validators.required],
+      NumberPackage: ['',[Validators.required]]
     });
 
   }

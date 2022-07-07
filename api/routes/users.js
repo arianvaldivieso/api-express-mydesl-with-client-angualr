@@ -11,5 +11,6 @@ router.use((req, res, next) => {
 
 router.get('/', UserController.index);
 router.get('/:userId',UserController.get);
+router.post('/login', UserController.login);
 
 module.exports = router

@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router();
 
+const myLogger = require('./../middlewares/authMiddleware.js');
+
 const OrderController = require('./../controllers/OrderController.js');
 // middleware that is specific to this router
 router.use((req, res, next) => {
@@ -8,6 +10,7 @@ router.use((req, res, next) => {
   next();
 })
 
+router.use(myLogger);
 
 router.get('/', OrderController.index);
 router.get('/:orderId',OrderController.get);
